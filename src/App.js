@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Nav />
       <Switch>
-      <Route path="/portfolio" exact component={Home} />
+      <Route path="/" exact component={Home} />
       <Route path="/resume" component={Resume}/>
       <Route path="/projects" component={Projects}/>
       </Switch>
@@ -27,7 +27,7 @@ const Home = () => (
       <p> I'm a web developer and data analyst. </p>
       <p> I recently graduated from the University of Montana with a Master's degree in Economics. </p>
       <p> I have experience with HTML, CSS, and Javascript, along with React, and node.js. </p>
-      <p> I use R/Shiny and Stata for more complex data analysis and econometric modeling.</p>
+      <p> I use R/Shiny and Stata for more complex data visualitzation, analysis, and econometric modeling.</p>
     </div>
   </div>
 )
