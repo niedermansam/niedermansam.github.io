@@ -25,8 +25,6 @@ const projectArr = [
   }
 ]
 
-let keywords =
-
 function Projects() {
   return (
     <div className="text-container">
