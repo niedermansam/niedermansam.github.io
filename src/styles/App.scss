@@ -11,7 +11,10 @@ Table of Contents:
   2.1 Link Styles
 
 3. Component Styles
-  3.1 Project Cards
+  3.2 Project Cards
+
+4 Responsive Styles
+  4.1 Cell Phones
 */
 
 /* 0. Preamble*/
@@ -37,8 +40,8 @@ $overlay: rgba(0,0,0,0.7);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
   margin-bottom: 50px;
+  height: 100%;
 }
 
 #greeting{
@@ -49,6 +52,7 @@ $overlay: rgba(0,0,0,0.7);
 
 body{
   font-family: $body-font;
+  background-color: lightgrey;
 }
 
 h1, h2 {
@@ -111,19 +115,47 @@ nav{
 
 .text-container{
   margin: auto;
-  max-width: 700px;
+  max-width: 800px;
+}
+
+/* 3.1 About Me */
+
+.about-bullet{
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  text-align: left;
+  align-items: center;
+
+  i{
+    margin-right: 10px;
+  }
+}
+
+/* 3.2 Project Cards */
+
+.projects{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.project-card{
+  box-shadow: 5px 5px 15px rgba(0,0,0,.5);
+  height: 100%;
+  width: 300px;
   margin: 50px;
 }
 
-/* 3.1 Project Cards */
+a > .project-card-header{
+  text-decoration: none;
+}
 
-.project-card{
+.project-card-header{
   height: 300px;
-  box-shadow: 5px 5px 15px rgba(0,0,0,.5);
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   overflow: hidden;
 
   .project-card-overlay {
@@ -158,26 +190,49 @@ nav{
   }
 
   &:hover .project-card-overlay{
-  transform: translateY(-150%);
+  transform: translateY(-121%);
   opacity: 1;
   }
 
-  .project-button-bar{
-    background-color: white;
-    z-index: 1;
-    box-shadow: -5px -5px 15px rgba(0,0,0,.5);
+}
+
+.project-button-bar{
+  background-color: white;
+  z-index: 1;
+  box-shadow: -5px -5px 15px rgba(0,0,0,.5);
+  background-color: $secondary-color;
+  button{
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color: black;
+    font-weight: bold;
     background-color: $secondary-color;
-    button{
-      padding: 5px 10px;
-      margin: 10px;
-      border-radius: 10px;
-      border-color: black;
-      font-weight: bold;
-      background-color: $secondary-color;
-      color: white;
+    color: white;
+    transition: background-color .3s ease;
+    &:hover{
+      background-color: $main-color;
     }
   }
 }
+
+
+
+.project-skills {
+  text-align: left;
+  margin: 0;
+  background-color: white;
+  padding: 20px;
+
+  h3{
+    margin: 0;
+  }
+}
+
+/* 4 Responsive Styles */
+
+/* 4.1 Cell Phones */
 
 @media (max-width: 400px) {
   nav, .nav-links{
@@ -193,5 +248,11 @@ nav{
   .link{
     padding-top: 10px;
     width: 100vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-card{
+    width: 900px;
   }
 }
