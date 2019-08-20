@@ -7,7 +7,7 @@ const projectArr = [
     the NOAA API to get a forecast for that point.`,
     url: "www.averageanalytics.com/snow-forecast",
     github: 'https://github.com/niedermansam/snow-forecast',
-    keywords: [ "Javascript", "APIs", "Data Collection", "leaflet.js", "GIS"],
+    keywords: [ "Javascript", "HTML", "CSS", "NOAA API", "Web Scraping", "leaflet.js"],
     img: require('./photos/ski-resort-explorer.PNG')
   },
   {name: "Census Time Series", description: `A Javascript application
@@ -15,7 +15,7 @@ const projectArr = [
      2010 to present.`,
     url: 'www.averageanalytics.com/census-search/',
     github: 'https://github.com/niedermansam/census-search',
-    keywords: ["APIs", "Plot.ly", "Data Visualization", "Data Collection", "JQuery"],
+    keywords: ["Javascript", "HTML", "CSS", "JQuery", "Census API", "Plot.ly", "Data Visualization"],
     img: require('./photos/census-searcher-tool.PNG')
   },
   {name: "Trump Twittermap", description: `An R/Shiny application
@@ -28,7 +28,14 @@ const projectArr = [
   }
 ]
 
-function Projects() {
+function Projects(props) {
+  console.log(props.number)
+  let number;
+
+  if(!props.number) number = 4;
+  if(props.number=="all") number=projectArr.length;
+  console.log(number);
+
   return (
     <div className="text-container project-page">
       <h1>Projects</h1>
@@ -36,7 +43,9 @@ function Projects() {
         {
           projectArr.map( (project, index) => {
             project.key = index;
-            return new ProjectCard(project);
+            if(index < number){
+              return new ProjectCard(project);
+            }
           })
         }
       </div>

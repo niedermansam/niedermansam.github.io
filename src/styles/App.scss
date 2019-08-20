@@ -33,6 +33,7 @@ $color-yellow: #E2964A;
 $color-green: #60A595;
 $main-color: #2D4671;
 $secondary-color: #607EB2;
+$secondary-color-light: rgba(96,126,178,.6);
 $overlay: rgba(0,0,0,0.7);
 
 /* 1. Global Styles */
@@ -104,6 +105,10 @@ nav{
 }
 
 
+.active .link {
+  font-weight: bolder;
+  border-bottom: 3px solid  white;
+}
 
 .link:hover:before {
   visibility: visible;
@@ -199,8 +204,8 @@ a > .project-card-header{
 .project-button-bar{
   background-color: white;
   z-index: 1;
-  box-shadow: -5px -5px 15px rgba(0,0,0,.5);
-  background-color: $secondary-color;
+  box-shadow: -5px 0px 15px rgba(0,0,0,.5);
+  background-color: $secondary-color-light;
   button{
     cursor: pointer;
     padding: 5px 10px;
@@ -224,6 +229,7 @@ a > .project-card-header{
   margin: 0;
   background-color: white;
   padding: 20px;
+  height: 200px;
 
   h3{
     margin: 0;

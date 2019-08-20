@@ -7,7 +7,7 @@ function Nav() {
     <nav>
       <h1 id="header-logo">S</h1>
       <ul className="nav-links">
-        <NavLink style={style} to="/">
+        <NavLink style={style} exact={true} to="/">
           <li className="link">About</li>
         </NavLink>
         <NavLink style={style} to="/resume">
