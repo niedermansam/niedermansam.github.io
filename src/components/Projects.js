@@ -28,14 +28,20 @@ const projectArr = [
   }
 ]
 
-function Projects(props) {
-  console.log(props.number)
-  let number;
+class Projects extends React.Component {
+  constructor(props){
+    super(props);
+    let number=props.number;
 
-  if(!props.number) number = 4;
-  if(props.number=="all") number=projectArr.length;
-  console.log(number);
+    if(!number) number=projectArr.length;
+    if(number=="all") number=projectArr.length;
 
+    this.state = {
+      number: number,
+
+    }
+  }
+  render(){
   return (
     <div className="text-container project-page">
       <h1>Projects</h1>
@@ -43,7 +49,7 @@ function Projects(props) {
         {
           projectArr.map( (project, index) => {
             project.key = index;
-            if(index < number){
+            if(index < this.state.number){
               return new ProjectCard(project);
             }
           })
@@ -51,6 +57,7 @@ function Projects(props) {
       </div>
     </div>
   );
+}
 }
 
 

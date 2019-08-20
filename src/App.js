@@ -20,7 +20,10 @@ function App() {
   );
 }
 
-const Home = () => (
+class Home extends React.Component {
+
+render(){
+return (
   <div className="text-container">
     <h1 id="greeting">Hi! My name is Sam.</h1>
     <div id="about-me">
@@ -28,9 +31,13 @@ const Home = () => (
       <div className="about-bullet"> <i className="fa fa-graduation-cap fa-3x"></i> <p> I recently graduated from the University of Montana with a Master's degree in Economics. </p></div>
       <div className="about-bullet"><i className="fa fa-code fa-3x"></i> <p> I have experience with HTML, CSS, and Javascript, along with React, and node.js. </p></div>
       <div className="about-bullet"> <i className="fa fa-bar-chart fa-3x"></i> <p> I use R/Shiny and Stata for more complex data visualitzation, analysis, and econometric modeling.</p></div>
-      <Projects />
+      <Projects number='2' />
     </div>
   </div>
 )
+}
+
+}
+
 
 export default App;
