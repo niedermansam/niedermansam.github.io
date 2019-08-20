@@ -178,3 +178,20 @@ nav{
     }
   }
 }
+
+@media (max-width: 400px) {
+  nav, .nav-links{
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    #header-logo{
+      margin-bottom: 0;
+    }
+  }
+
+  .link{
+    padding-top: 10px;
+    width: 100vw;
+  }
+}
