@@ -28,7 +28,9 @@ $header-font: 'Farro', sans-serif;
 $color-dark: #051C33;
 $color-yellow: #E2964A;
 $color-green: #60A595;
-$overlay: rgba(96,165,149, 0.5);
+$main-color: #2D4671;
+$secondary-color: #607EB2;
+$overlay: rgba(0,0,0,0.7);
 
 /* 1. Global Styles */
 .App{
@@ -59,7 +61,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: $color-yellow;
+  background: $main-color;
   color: white;
 }
 
@@ -110,7 +112,7 @@ nav{
 .text-container{
   margin: auto;
   max-width: 700px;
-  min-width: 350px;
+  margin: 50px;
 }
 
 /* 3.1 Project Cards */
@@ -125,21 +127,29 @@ nav{
   overflow: hidden;
 
   .project-card-overlay {
-    height: 200px;
     position: relative;
-    left: 0;
+    color: white;
+    bottom: -100%;
     background-color: $overlay;
     overflow: hidden;
     height: 100%;
-    transform: translateX(-100%);
-    transition: .5s ease;
+    transform: translateY(0);
+    transition: all .6s ease-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 0;
+    opacity:0;
   }
 
   .project-name {
-    margin-bottom: 0;
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    color: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,.5);
+    background-color: $secondary-color;
+    z-index: 1;
   }
 
   .project-description{
@@ -148,11 +158,23 @@ nav{
   }
 
   &:hover .project-card-overlay{
-  transform: translateX(0);
+  transform: translateY(-150%);
+  opacity: 1;
   }
 
-  button{
-    padding: 5px;
-    margin: 10px;
+  .project-button-bar{
+    background-color: white;
+    z-index: 1;
+    box-shadow: -5px -5px 15px rgba(0,0,0,.5);
+    background-color: $secondary-color;
+    button{
+      padding: 5px 10px;
+      margin: 10px;
+      border-radius: 10px;
+      border-color: black;
+      font-weight: bold;
+      background-color: $secondary-color;
+      color: white;
+    }
   }
 }
